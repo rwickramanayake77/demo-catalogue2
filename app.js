@@ -106,7 +106,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
     }); 
     }
     
-/*
+
     var blockJSON4 = 
     {
         
@@ -131,7 +131,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
     blockJSON1.blocks.push(blockJSON4);
     blockJSON1.blocks.push({
   "type": "divider"
-    }); */
+    }); 
     
     var lastLine = ":warning: " + message.text.split("\n")[message.text.split("\n").length-1] + ":warning: " ;
     

@@ -12,7 +12,8 @@ const TARGET_CHANNEL = 'C02EJRU1B7Z'
 app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, client }) => {
   try {
     // Call chat.post
-    const result22 = await client.chat.postMessage({
+    const result22 = await app.client.chat.postMessage({
+      token: process.env.SLACK_BOT_TOKEN,
       channel: TARGET_CHANNEL,
       text: `Welcome to the team, you can introduce yourself in this channel.`
     });
@@ -27,7 +28,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
     const user = await client.users.profile.get(options);
     console.log("user: "+ user.real_name);*/
     
-    var blockJSON1 = {channel: TARGET_CHANNEL ,     
+    var blockJSON1 = {token: process.env.SLACK_BOT_TOKEN, channel: TARGET_CHANNEL,   
       blocks: [
       {
 			"type": "image",
@@ -149,7 +150,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
 			}});
     
     console.log("JSON Msg 11:  "+ JSON.stringify(blockJSON1));
-    const result = await client.chat.postMessage(blockJSON1);
+    const result = await app.client.chat.postMessage(blockJSON1);
   }
   catch (error) {
     console.error(error);

@@ -10,14 +10,7 @@ const app = new App({
 const TARGET_CHANNEL = 'C02EJRU1B7Z'
 
 app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, client }) => {
-  try {
-    // Call chat.post
-    const result22 = await app.client.chat.postMessage({
-      token: process.env.SLACK_BOT_TOKEN,
-      channel: TARGET_CHANNEL,
-      text: `Welcome to the team, you can introduce yourself in this channel.`
-    });
-    
+  try {  
     console.log(message);
     
     var heading = ":sparkler:  " + message.text.split("\n")[0] + "  :sparkler:";      

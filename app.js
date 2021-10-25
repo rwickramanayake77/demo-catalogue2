@@ -51,7 +51,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
     var demoList = message.text.split("Agenda:")[1].split("\n\n")[0].split("\n");
     var demoCount = demoList.length;
     console.log("demo count: "+demoCount);    
-    var recordingLink = message.text.split("Recording is")[1].split("<")[1].split("?")[0];
+    var recordingLink = message.text.split("Recording is")[1].split("<")[1].split("view")[0];
        
     for (var i=1; i<demoCount; i++){    
       var blockJSON2 = 
@@ -152,7 +152,7 @@ app.message('RECORDING: Public Sector Solutions Enablement', async ({ message, c
 });
 
 //quip integration test code
-var quip = require('./quip');
+/*var quip = require('./quip');
 var client = new quip.Client({accessToken: "Y1VVQU1BdDhyM2o=|1663829552|+zxu8z3KI9FJnWusF5jrQ2K9Gr1LWkfv1lJfU3J6UAg="});
 
 client.getAuthenticatedUser(function(err, user) {
@@ -161,6 +161,7 @@ client.getAuthenticatedUser(function(err, user) {
                     "items in your starred folder");
     });
 });
+*/
 
 var object = {};
 
